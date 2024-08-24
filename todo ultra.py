@@ -1,4 +1,4 @@
-from modules.functionsss import set_todos, get_todos
+from modules.cli import set_todos, get_todos
 import time
 
 now = time.strftime("%c")

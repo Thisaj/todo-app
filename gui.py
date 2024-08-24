@@ -1,7 +1,12 @@
 
-import modules.functionsss as functionsss
+import modules.cli as functionsss
 import PySimpleGUI as sg
 import time
+import os
+
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
+        pass
 
 sg.theme('NeonBlue1')
 
@@ -30,9 +35,9 @@ while True:
     event, values=window.read(timeout=10)
     window["CLOCK"].Update(value=time.strftime("%c"))
     # print(event, values)
-    print(1, event)
-    print(2, values)
-    print(3, values['todos'])
+    # print(1, event)
+    # print(2, values)
+    # print(3, values['todos'])
     match event:
         case "Add":
             todos = functionsss.get_todos()
